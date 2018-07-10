@@ -9,5 +9,7 @@
 #ifndef Bridging_Header_h
 #define Bridging_Header_h
 
+#import <SSignalKit/SSignalKit.h>
+#import <LegacyComponents/LegacyComponents.h>
 
 #endif /* Bridging_Header_h */

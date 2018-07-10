@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>We need this so that you can take and share photos and videos.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need this so that you can save photos and videos to your photo library.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need this so that you can share photos and videos from your photo library.</string>
 </dict>
 </plist>

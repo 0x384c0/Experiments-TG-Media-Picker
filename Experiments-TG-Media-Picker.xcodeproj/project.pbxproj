@@ -12,7 +12,57 @@
 		4912768B20F4B90C003756A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4912768920F4B90C003756A8 /* Main.storyboard */; };
 		4912768D20F4B90D003756A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4912768C20F4B90D003756A8 /* Assets.xcassets */; };
 		4912769020F4B90D003756A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4912768E20F4B90D003756A8 /* LaunchScreen.storyboard */; };
+		4964DE6920F4BDC7006A6B0B /* LegacyComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4964DE5620F4BDB3006A6B0B /* LegacyComponents.framework */; };
+		4964DE6A20F4BDCB006A6B0B /* SSignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4964DE6020F4BDBB006A6B0B /* SSignalKit.framework */; };
+		4977F7D420F4C4010069CD98 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4977F7D320F4C4010069CD98 /* libc++.tbd */; };
+		49D0D9FE20F5F24D0069975B /* LegacyComponentsResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49D0D9F720F5F24D0069975B /* LegacyComponentsResources.bundle */; };
+		49D3BD6A20F5F4DF008C8154 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49D3BD6820F5F4DF008C8154 /* Localizable.strings */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4964DE5520F4BDB3006A6B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4964DE5120F4BDB2006A6B0B /* LegacyComponents.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D01777271F1F8F100044446D;
+			remoteInfo = LegacyComponents;
+		};
+		4964DE5F20F4BDBB006A6B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4964DE5720F4BDBB006A6B0B /* SSignalKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0445DD81A7C2CA500267924;
+			remoteInfo = SSignalKit;
+		};
+		4964DE6120F4BDBB006A6B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4964DE5720F4BDBB006A6B0B /* SSignalKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0445DE31A7C2CA500267924;
+			remoteInfo = SSignalKitTests;
+		};
+		4964DE6320F4BDBB006A6B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4964DE5720F4BDBB006A6B0B /* SSignalKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0085B221B282B9800EAF753;
+			remoteInfo = SwiftSignalKit;
+		};
+		4964DE6520F4BDBB006A6B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4964DE5720F4BDBB006A6B0B /* SSignalKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0085B2C1B282B9800EAF753;
+			remoteInfo = SwiftSignalKitTests;
+		};
+		4964DE6720F4BDBB006A6B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4964DE5720F4BDBB006A6B0B /* SSignalKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0B417ED1D7DFA63004562A4;
+			remoteInfo = SwiftSignalKitMac;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4912768220F4B90B003756A8 /* Experiments-TG-Media-Picker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Experiments-TG-Media-Picker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +72,13 @@
 		4912768C20F4B90D003756A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4912768F20F4B90D003756A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4912769120F4B90E003756A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4964DE5120F4BDB2006A6B0B /* LegacyComponents.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LegacyComponents.xcodeproj; path = submodules/LegacyComponents/LegacyComponents.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4964DE5720F4BDBB006A6B0B /* SSignalKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSignalKit.xcodeproj; path = thirdparty/SSignalKit/SSignalKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4977F7D320F4C4010069CD98 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		4977F7D520F4C4090069CD98 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		49CBDF8820F5DE7700867B08 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		49D0D9F720F5F24D0069975B /* LegacyComponentsResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = LegacyComponentsResources.bundle; path = submodules/LegacyComponents/LegacyComponents/Resources/LegacyComponentsResources.bundle; sourceTree = SOURCE_ROOT; };
+		49D3BD6920F5F4DF008C8154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49E1660620F4BA890004160F /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -30,6 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4977F7D420F4C4010069CD98 /* libc++.tbd in Frameworks */,
+				4964DE6A20F4BDCB006A6B0B /* SSignalKit.framework in Frameworks */,
+				4964DE6920F4BDC7006A6B0B /* LegacyComponents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +101,7 @@
 			children = (
 				4912768420F4B90B003756A8 /* Experiments-TG-Media-Picker */,
 				4912768320F4B90B003756A8 /* Products */,
+				49E1661F20F4BB3F0004160F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,19 +120,53 @@
 				4912768720F4B90C003756A8 /* ViewController.swift */,
 				4912768920F4B90C003756A8 /* Main.storyboard */,
 				49E165ED20F4B9D50004160F /* submodules */,
-				4912768E20F4B90D003756A8 /* LaunchScreen.storyboard */,
 				4912768C20F4B90D003756A8 /* Assets.xcassets */,
+				4912768E20F4B90D003756A8 /* LaunchScreen.storyboard */,
 				4912769120F4B90E003756A8 /* Info.plist */,
 				49E1660620F4BA890004160F /* Bridging-Header.h */,
+				49D3BD6820F5F4DF008C8154 /* Localizable.strings */,
+				49CBDF8820F5DE7700867B08 /* README.md */,
 			);
 			path = "Experiments-TG-Media-Picker";
+			sourceTree = "<group>";
+		};
+		4964DE5220F4BDB2006A6B0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4964DE5620F4BDB3006A6B0B /* LegacyComponents.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4964DE5820F4BDBB006A6B0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4964DE6020F4BDBB006A6B0B /* SSignalKit.framework */,
+				4964DE6220F4BDBB006A6B0B /* SSignalKitTests.xctest */,
+				4964DE6420F4BDBB006A6B0B /* SwiftSignalKit.framework */,
+				4964DE6620F4BDBB006A6B0B /* SwiftSignalKitTests.xctest */,
+				4964DE6820F4BDBB006A6B0B /* SwiftSignalKitMac.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		49E165ED20F4B9D50004160F /* submodules */ = {
 			isa = PBXGroup;
 			children = (
+				4964DE5720F4BDBB006A6B0B /* SSignalKit.xcodeproj */,
+				4964DE5120F4BDB2006A6B0B /* LegacyComponents.xcodeproj */,
+				49D0D9F720F5F24D0069975B /* LegacyComponentsResources.bundle */,
 			);
 			path = submodules;
+			sourceTree = "<group>";
+		};
+		49E1661F20F4BB3F0004160F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4977F7D520F4C4090069CD98 /* libstdc++.tbd */,
+				4977F7D320F4C4010069CD98 /* libc++.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +215,16 @@
 			mainGroup = 4912767920F4B90B003756A8;
 			productRefGroup = 4912768320F4B90B003756A8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4964DE5220F4BDB2006A6B0B /* Products */;
+					ProjectRef = 4964DE5120F4BDB2006A6B0B /* LegacyComponents.xcodeproj */;
+				},
+				{
+					ProductGroup = 4964DE5820F4BDBB006A6B0B /* Products */;
+					ProjectRef = 4964DE5720F4BDBB006A6B0B /* SSignalKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4912768120F4B90B003756A8 /* Experiments-TG-Media-Picker */,
@@ -127,11 +232,58 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		4964DE5620F4BDB3006A6B0B /* LegacyComponents.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LegacyComponents.framework;
+			remoteRef = 4964DE5520F4BDB3006A6B0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4964DE6020F4BDBB006A6B0B /* SSignalKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SSignalKit.framework;
+			remoteRef = 4964DE5F20F4BDBB006A6B0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4964DE6220F4BDBB006A6B0B /* SSignalKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SSignalKitTests.xctest;
+			remoteRef = 4964DE6120F4BDBB006A6B0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4964DE6420F4BDBB006A6B0B /* SwiftSignalKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftSignalKit.framework;
+			remoteRef = 4964DE6320F4BDBB006A6B0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4964DE6620F4BDBB006A6B0B /* SwiftSignalKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftSignalKitTests.xctest;
+			remoteRef = 4964DE6520F4BDBB006A6B0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4964DE6820F4BDBB006A6B0B /* SwiftSignalKitMac.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftSignalKitMac.framework;
+			remoteRef = 4964DE6720F4BDBB006A6B0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		4912768020F4B90B003756A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D3BD6A20F5F4DF008C8154 /* Localizable.strings in Resources */,
+				49D0D9FE20F5F24D0069975B /* LegacyComponentsResources.bundle in Resources */,
 				4912769020F4B90D003756A8 /* LaunchScreen.storyboard in Resources */,
 				4912768D20F4B90D003756A8 /* Assets.xcassets in Resources */,
 				4912768B20F4B90C003756A8 /* Main.storyboard in Resources */,
@@ -167,6 +319,14 @@
 				4912768F20F4B90D003756A8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		49D3BD6820F5F4DF008C8154 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49D3BD6920F5F4DF008C8154 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -292,11 +452,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AW8RFH6CD4;
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/submodules/LegacyComponents",
+					"$(PROJECT_DIR)/thirdparty/SSignalKit",
+				);
 				INFOPLIST_FILE = "Experiments-TG-Media-Picker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.0x384c0.Experiments-TG-Media-Picker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
@@ -311,11 +477,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AW8RFH6CD4;
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/submodules/LegacyComponents",
+					"$(PROJECT_DIR)/thirdparty/SSignalKit",
+				);
 				INFOPLIST_FILE = "Experiments-TG-Media-Picker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.0x384c0.Experiments-TG-Media-Picker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
