@@ -22,6 +22,7 @@
 		4912768C20F4B90D003756A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4912768F20F4B90D003756A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4912769120F4B90E003756A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49E1660620F4BA890004160F /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +58,20 @@
 				4912768520F4B90B003756A8 /* AppDelegate.swift */,
 				4912768720F4B90C003756A8 /* ViewController.swift */,
 				4912768920F4B90C003756A8 /* Main.storyboard */,
-				4912768C20F4B90D003756A8 /* Assets.xcassets */,
+				49E165ED20F4B9D50004160F /* submodules */,
 				4912768E20F4B90D003756A8 /* LaunchScreen.storyboard */,
+				4912768C20F4B90D003756A8 /* Assets.xcassets */,
 				4912769120F4B90E003756A8 /* Info.plist */,
+				49E1660620F4BA890004160F /* Bridging-Header.h */,
 			);
 			path = "Experiments-TG-Media-Picker";
+			sourceTree = "<group>";
+		};
+		49E165ED20F4B9D50004160F /* submodules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = submodules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +299,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.0x384c0.Experiments-TG-Media-Picker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,6 +318,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.0x384c0.Experiments-TG-Media-Picker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
