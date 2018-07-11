@@ -9,42 +9,82 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let context = Context()
-    weak var vc:TGMediaAssetsController?
+    //MARK: UI
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var singlePhotoSelectionSwitch: UISwitch!
     
-    override func viewDidLoad() {
-        LegacyComponentsGlobals.setProvider(ComponentsProvider())
-    }
-    
-    
+    //MARK: UI Actions
     @IBAction func pickAssetTap(_ sender: Any) {
-        listSelectors(SSignal())
+        let intent:TGMediaAssetsControllerIntent
+        if singlePhotoSelectionSwitch.isOn{
+            intent = TGMediaAssetsControllerSetProfilePhotoIntent
+        } else {
+            intent = TGMediaAssetsControllerSendMediaIntent
+        }
         vc = TGMediaAssetsController(context: context,
-                                         assetGroup:nil,
-                                         intent: TGMediaAssetsControllerSendMediaIntent,
-                                         recipientName: "Test recipientName",
-                                         saveEditedPhotos: false,
-                                         allowGrouping: false)
+                                     assetGroup:nil,
+                                     intent: intent,
+                                     recipientName: "Test recipientName",
+                                     saveEditedPhotos: false,
+                                     allowGrouping: false)
+        
+        vc?.descriptionGenerator = {(result, caption, hash) -> [AnyHashable : Any]? in
+            return [
+                "result":result ?? Void(),
+                "caption":caption ?? Void(),
+                "hash":hash ?? Void()
+            ]
+        }
         
         vc?.dismissalBlock = {[weak self] in
             self?.vc?.dismiss(animated: true)
         }
         vc?.completionBlock = {[weak self] signals in
             self?.vc?.dismiss(animated: true)
+            self?.asyncProcessMediaAssetSignals(signals as! Array<SSignal>)
         }
         self.present(vc!, animated: true)
     }
     
-    func listSelectors(_ obj:NSObject){
-        var mc: UInt32 = 0
-        let mcPointer = withUnsafeMutablePointer(to:&mc, { $0 })
-        let mlist = class_copyMethodList(object_getClass(obj), mcPointer)!
-        print("\(mc) methods")
-        for i in 0...Int(mc) {
-            print(String(format: "Method #%d: %s", arguments: [i, sel_getName(method_getName(mlist[i]))]))
-        }
+    //MARK: LifeCycle
+    override func viewDidLoad() {
+        LegacyComponentsGlobals.setProvider(ComponentsProvider())
     }
     
+    //MARK: Others
+    let context = Context()
+    var disposable:SDisposable?
+    weak var vc:TGMediaAssetsController?
+    
+    func asyncProcessMediaAssetSignals(_ signals:Array<SSignal>){
+        let signal = signals.first!
+        disposable = signal.start{[unowned self] object in
+            let
+            dict = object as! [AnyHashable : Any],
+            assetDict = dict["result"] as! [AnyHashable : Any],
+            asset = assetDict["asset"] as? TGMediaAsset,
+            editedPhoto = assetDict["image"] as? UIImage
+            print(asset?.backingAsset)
+            print(editedPhoto)
+            if let editedPhoto = editedPhoto{
+                self.imageView.image = editedPhoto
+            } else if let backingAsset = asset?.backingAsset{
+                self.imageView.image = self.convertImageFromAsset(backingAsset)
+            } else {
+                preconditionFailure("NO IMAGE")
+            }
+        }
+    }
+    func convertImageFromAsset(_ asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var image = UIImage()
+        option.isSynchronous = true
+        manager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            image = result!
+        })
+        return image
+    }
 }
 
 class ComponentsProvider:NSObject,LegacyComponentsGlobalsProvider{
@@ -77,15 +117,15 @@ class ComponentsProvider:NSObject,LegacyComponentsGlobalsProvider{
     }
     
     func statusBarFrame() -> CGRect {
-        return CGRect.zero
+        return UIApplication.shared.statusBarFrame
     }
     
     func isStatusBarHidden() -> Bool {
-        return false
+        return UIApplication.shared.isStatusBarHidden
     }
     
     func setStatusBarHidden(_ hidden: Bool, with animation: UIStatusBarAnimation) {
-        
+        UIApplication.shared.isStatusBarHidden = hidden
     }
     
     func statusBarStyle() -> UIStatusBarStyle {
@@ -220,19 +260,19 @@ class Context:NSObject,LegacyComponentsContext{
     }
     
     func statusBarFrame() -> CGRect {
-        return CGRect.zero
+        return UIApplication.shared.statusBarFrame
     }
     
     func isStatusBarHidden() -> Bool {
-        return false
+        return UIApplication.shared.isStatusBarHidden
     }
     
     func setStatusBarHidden(_ hidden: Bool, with animation: UIStatusBarAnimation) {
-        
+        UIApplication.shared.isStatusBarHidden = hidden
     }
     
     func forceSetStatusBarHidden(_ hidden: Bool, with animation: UIStatusBarAnimation) {
-        
+        UIApplication.shared.isStatusBarHidden = hidden
     }
     
     func statusBarStyle() -> UIStatusBarStyle {
